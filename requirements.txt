@@ -1,0 +1,11 @@
+clickhouse-driver>=0.2.6
+numpy
+pandas
+polars
+websockets>=8.1
+psutil>=5.9.0
+scipy>=1.10
+scikit-learn>=1.4
+xgboost>=2.0
+tqdm>=4.66
+pytest>=8.0

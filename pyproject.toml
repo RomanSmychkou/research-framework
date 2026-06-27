@@ -1,0 +1,44 @@
+[project]
+name = "quant-system"
+version = "0.1.0"
+description = "Quant research pipeline: historical upload, features, correlation export"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "clickhouse-driver>=0.2.6",
+    "numpy",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "psutil>=5.9.0",
+    "scikit-learn>=1.4",
+    "scipy>=1.10",
+    "tqdm>=4.66",
+    "websockets>=8.1",
+    "xgboost>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# Holdout (03) + walk-forward (04): ldp_statistics + optional mlfinlab when installed.
+# Purged/chunk walk-forward is implemented in quant_system.backtest (no timeseriescv dep).
+backtest = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quant_system", "src/pipeline"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests/unit", "tests/integration", "tests/e2e"]
+
+[tool.ruff]
+line-length = 100
+exclude = ["examples", "containers", "backups", "restore"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
