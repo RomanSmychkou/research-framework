@@ -1,0 +1,44 @@
+# Docker
+.dockerignore
+docker-compose*.yml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data and logs
+data/
+logs/
+*.log
+pce-passwords*.txt
+clickhouse_data/
+grafana_data/
+collector_logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg

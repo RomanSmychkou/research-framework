@@ -1,0 +1,100 @@
+"""Feature module public API."""
+
+from .default_contexts import (
+    FEATURE_BUCKET_GRANULARITY_KEY,
+    PRICE_MOMENTUM_DEFAULT_CONTEXT,
+    VOLUME_BALANCE_DEFAULT_CONTEXT,
+)
+from .declarations import (
+    ALL_FEATURE_DECLARATIONS,
+    FIRST_LAST_MOMENTUM_DECLARATION,
+    FIRST_LAST_MOMENTUM_FOR_BALANCE_DECLARATION,
+    PRICE_DELTA_4S_HORIZON,
+    PRICE_DELTA_4S_TARGET_DECLARATION_BINNED_1S,
+    PRICE_DELTA_4S_TARGET_DECLARATION,
+    PRICE_DIRECTION_4S_TARGET_DECLARATION,
+    SELL_RISE_HIT_055_200MS_TARGET_DECLARATION,
+    SELL_RISE_HIT_055_TARGET_TEMPLATE_TRADE_TIME,
+    PRICE_DIRECTION_TARGET_TEMPLATE_TRADE_TIME,
+    PRICE_DELTA_10S_HORIZON,
+    PRICE_DELTA_10S_TARGET_DECLARATION_BINNED_1S,
+    PRICE_DELTA_10S_TARGET_DECLARATION,
+    PRICE_DELTA_TARGET_TEMPLATE_BINNED_1S,
+    PRICE_DELTA_TARGET_TEMPLATE_TRADE_TIME,
+    SIDE_VOLUME_BALANCE_DECLARATION,
+    SPOT_TRADES_ROLLING_DECLARATIONS,
+)
+from .factory import FeatureFactory
+from .feature_contract import BaseFeatureTemplate, FeatureInstance, FeatureTemplate
+from .gate import (
+    FeatureBundle,
+    build_feature_bundle,
+    build_named_target_feature,
+    build_price_delta_target_feature,
+    build_spot_trades_rolling_bundle,
+)
+from .graph import topological_order, validate_declarations
+from .registry import FeatureRegistry, FeatureRegistryBuilder, default_registry
+from .sql_renderer import (
+    render_feature_invalid_onehot_sql,
+    render_feature_invalid_replace_sql,
+    render_feature_sql,
+    render_feature_sql_safe,
+)
+from .templates import (
+    FIRST_LAST_DELTA_TEMPLATE,
+    INVALID_VALUE_ONEHOT_SQL_TEMPLATE,
+    INVALID_VALUE_REPLACE_SQL_TEMPLATE,
+    SIGNED_SIDE_AGGREGATE_TEMPLATE,
+    SPOT_TRADES_ROLLING_METRIC_TEMPLATE,
+    render_invalid_value_onehot_template,
+    render_invalid_value_replace_template,
+)
+
+__all__ = (
+    "FEATURE_BUCKET_GRANULARITY_KEY",
+    "BaseFeatureTemplate",
+    "FeatureTemplate",
+    "FeatureInstance",
+    "FeatureFactory",
+    "FeatureBundle",
+    "FeatureRegistry",
+    "FeatureRegistryBuilder",
+    "default_registry",
+    "build_feature_bundle",
+    "build_spot_trades_rolling_bundle",
+    "build_price_delta_target_feature",
+    "build_named_target_feature",
+    "validate_declarations",
+    "topological_order",
+    "render_feature_sql",
+    "render_feature_sql_safe",
+    "render_feature_invalid_onehot_sql",
+    "render_feature_invalid_replace_sql",
+    "ALL_FEATURE_DECLARATIONS",
+    "FIRST_LAST_MOMENTUM_DECLARATION",
+    "FIRST_LAST_MOMENTUM_FOR_BALANCE_DECLARATION",
+    "SPOT_TRADES_ROLLING_DECLARATIONS",
+    "PRICE_DELTA_TARGET_TEMPLATE_BINNED_1S",
+    "PRICE_DELTA_TARGET_TEMPLATE_TRADE_TIME",
+    "PRICE_DIRECTION_TARGET_TEMPLATE_TRADE_TIME",
+    "PRICE_DELTA_4S_TARGET_DECLARATION_BINNED_1S",
+    "PRICE_DELTA_4S_TARGET_DECLARATION",
+    "PRICE_DIRECTION_4S_TARGET_DECLARATION",
+    "SELL_RISE_HIT_055_TARGET_TEMPLATE_TRADE_TIME",
+    "SELL_RISE_HIT_055_200MS_TARGET_DECLARATION",
+    "PRICE_DELTA_10S_TARGET_DECLARATION_BINNED_1S",
+    "PRICE_DELTA_10S_TARGET_DECLARATION",
+    "SIDE_VOLUME_BALANCE_DECLARATION",
+    "PRICE_MOMENTUM_DEFAULT_CONTEXT",
+    "VOLUME_BALANCE_DEFAULT_CONTEXT",
+    "FIRST_LAST_DELTA_TEMPLATE",
+    "INVALID_VALUE_ONEHOT_SQL_TEMPLATE",
+    "INVALID_VALUE_REPLACE_SQL_TEMPLATE",
+    "SIGNED_SIDE_AGGREGATE_TEMPLATE",
+    "SPOT_TRADES_ROLLING_METRIC_TEMPLATE",
+    "render_invalid_value_onehot_template",
+    "render_invalid_value_replace_template",
+    "PRICE_DELTA_4S_HORIZON",
+    "PRICE_DELTA_10S_HORIZON",
+)
