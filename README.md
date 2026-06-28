@@ -58,3 +58,4 @@ python 05_chunks_marker.py --symbol BTCUSDT --start-date 2024-01-01T00:00:00Z --
 Licensed under `CC BY-NC-ND 4.0`.
 Commercial use and distribution of modified versions are prohibited.
 See `LICENSE` or https://creativecommons.org/licenses/by-nc-nd/4.0/.
+This license applies to the entire repository history unless otherwise noted.
