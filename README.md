@@ -52,3 +52,9 @@ python 05_chunks_marker.py --symbol BTCUSDT --start-date 2024-01-01T00:00:00Z --
 
 - In progress: feature self-metrics and result storage format.
 - Planned: business metrics views (slippage/fees) and stricter anti-autocorrelation chunking modes.
+
+## License
+
+Licensed under `CC BY-NC-ND 4.0`.
+Commercial use and distribution of modified versions are prohibited.
+See `LICENSE` or https://creativecommons.org/licenses/by-nc-nd/4.0/.
